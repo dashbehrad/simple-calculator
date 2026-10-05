@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Calculator Body with subtle shadow and rounded corners -->
+    <path
+        android:pathData="M38,24 L70,24 A12,12 0 0,1 82,36 L82,76 A12,12 0 0,1 70,88 L38,88 A12,12 0 0,1 26,76 L26,36 A12,12 0 0,1 38,24 Z"
+        android:fillColor="#1E293B" />
+
+    <!-- Calculator Display Screen -->
+    <path
+        android:pathData="M37,29 L71,29 A5,5 0 0,1 76,34 L76,41 A5,5 0 0,1 71,46 L37,46 A5,5 0 0,1 32,41 L32,34 A5,5 0 0,1 37,29 Z"
+        android:fillColor="#0F172A" />
+
+    <!-- Screen digits glow indicator -->
+    <path
+        android:pathData="M64,36 L72,36 M67,40 L72,40"
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round" />
+
+    <!-- Row 1: Function / Operator Buttons (y = 52) -->
+    <!-- Button 1: AC (radius 3.8) -->
+    <path
+        android:pathData="M37,52m-3.8,0a3.8,3.8 0 1,0 7.6,0a3.8,3.8 0 1,0 -7.6,0"
+        android:fillColor="#475569" />
+    <!-- Button 2: +/- -->
+    <path
+        android:pathData="M48,52m-3.8,0a3.8,3.8 0 1,0 7.6,0a3.8,3.8 0 1,0 -7.6,0"
+        android:fillColor="#475569" />
+    <!-- Button 3: % -->
+    <path
+        android:pathData="M59,52m-3.8,0a3.8,3.8 0 1,0 7.6,0a3.8,3.8 0 1,0 -7.6,0"
+        android:fillColor="#475569" />
+    <!-- Button 4: ÷ (Operator) -->
+    <path
+        android:pathData="M70,52m-3.8,0a3.8,3.8 0 1,0 7.6,0a3.8,3.8 0 1,0 -7.6,0"
+        android:fillColor="#F59E0B" />
+
+    <!-- Row 2: Numbers (7, 8, 9) & Operator (×) (y = 61) -->
+    <path
+        android:pathData="M37,61m-3.8,0a3.8,3.8 0 1,0 7.6,0a3.8,3.8 0 1,0 -7.6,0"
+        android:fillColor="#334155" />
+    <path
+        android:pathData="M48,61m-3.8,0a3.8,3.8 0 1,0 7.6,0a3.8,3.8 0 1,0 -7.6,0"
+        android:fillColor="#334155" />
+    <path
+        android:pathData="M59,61m-3.8,0a3.8,3.8 0 1,0 7.6,0a3.8,3.8 0 1,0 -7.6,0"
+        android:fillColor="#334155" />
+    <!-- Button: × -->
+    <path
+        android:pathData="M70,61m-3.8,0a3.8,3.8 0 1,0 7.6,0a3.8,3.8 0 1,0 -7.6,0"
+        android:fillColor="#F59E0B" />
+
+    <!-- Row 3: Numbers (4, 5, 6) & Operator (-) (y = 70) -->
+    <path
+        android:pathData="M37,70m-3.8,0a3.8,3.8 0 1,0 7.6,0a3.8,3.8 0 1,0 -7.6,0"
+        android:fillColor="#334155" />
+    <path
+        android:pathData="M48,70m-3.8,0a3.8,3.8 0 1,0 7.6,0a3.8,3.8 0 1,0 -7.6,0"
+        android:fillColor="#334155" />
+    <path
+        android:pathData="M59,70m-3.8,0a3.8,3.8 0 1,0 7.6,0a3.8,3.8 0 1,0 -7.6,0"
+        android:fillColor="#334155" />
+    <!-- Button: - -->
+    <path
+        android:pathData="M70,70m-3.8,0a3.8,3.8 0 1,0 7.6,0a3.8,3.8 0 1,0 -7.6,0"
+        android:fillColor="#F59E0B" />
+
+    <!-- Row 4: Numbers (1, 2) & Operator (+) & Equals (=) (y = 79) -->
+    <path
+        android:pathData="M37,79m-3.8,0a3.8,3.8 0 1,0 7.6,0a3.8,3.8 0 1,0 -7.6,0"
+        android:fillColor="#334155" />
+    <path
+        android:pathData="M48,79m-3.8,0a3.8,3.8 0 1,0 7.6,0a3.8,3.8 0 1,0 -7.6,0"
+        android:fillColor="#334155" />
+    <!-- Button: + -->
+    <path
+        android:pathData="M59,79m-3.8,0a3.8,3.8 0 1,0 7.6,0a3.8,3.8 0 1,0 -7.6,0"
+        android:fillColor="#F59E0B" />
+    <!-- Button: = (Accent Teal/Cyan) -->
+    <path
+        android:pathData="M70,79m-3.8,0a3.8,3.8 0 1,0 7.6,0a3.8,3.8 0 1,0 -7.6,0"
+        android:fillColor="#0EA5E9" />
+</vector>

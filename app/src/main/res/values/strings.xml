@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">ماشین حساب ساده</string>
+    <string name="calculator_title">ماشین حساب ساده</string>
+    <string name="history_title">تاریخچه محاسبات</string>
+    <string name="clear_history">پاک کردن تاریخچه</string>
+    <string name="clear_history_confirm_title">حذف تاریخچه</string>
+    <string name="clear_history_confirm_message">آیا از پاک کردن تمامی محاسبات قبلی اطمینان دارید؟</string>
+    <string name="confirm">تأیید</string>
+    <string name="cancel">انصراف</string>
+    <string name="no_history">هنوز هیچ محاسبه‌ای انجام نشده است</string>
+    <string name="no_history_hint">محاسبات شما پس از زدن دکمه مساوی (=) به طور خودکار در حافظه دستگاه ذخیره می‌شوند.</string>
+    <string name="error_divide_by_zero">تقسیم بر صفر امکان‌پذیر نیست</string>
+    <string name="error_invalid_expression">خطا در عبارت ریاضی</string>
+    <string name="copied_to_clipboard">نتیجه در کلیپ‌بورد کپی شد</string>
+    <string name="theme_system">خودکار (تم سیستم)</string>
+    <string name="theme_light">روشن</string>
+    <string name="theme_dark">تاریک</string>
+    <string name="theme_settings">انتخاب تم</string>
+    <string name="haptics_label">لرزش دکمه‌ها (Haptic)</string>
+    <string name="settings_title">تنظیمات</string>
+    <string name="about_title">درباره برنامه</string>
+    <string name="about_desc">ماشین حساب بومی و مدرن اندروید، کاملاً آفلاین و سریع با طراحی ویژه دکمه‌های گرد و هماهنگ با سیستم.</string>
+    <string name="cd_clear">پاک کردن همه</string>
+    <string name="cd_backspace">حذف رقم آخر</string>
+    <string name="cd_percent">درصد</string>
+    <string name="cd_divide">تقسیم</string>
+    <string name="cd_multiply">ضرب</string>
+    <string name="cd_subtract">تفریق</string>
+    <string name="cd_add">جمع</string>
+    <string name="cd_equals">مساوی</string>
+    <string name="cd_negate">تغییر علامت مثبت و منفی</string>
+    <string name="cd_dot">ممیز اعشار</string>
+</resources>

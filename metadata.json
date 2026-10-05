@@ -1,0 +1,6 @@
+{
+  "name": "ماشین حساب ساده",
+  "description": "یک ماشین حساب بومی، مدرن و آفلاین با تشخیص خودکار تم سیستم و دکمه‌های گرد زیبا",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
