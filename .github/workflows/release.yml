@@ -29,35 +29,60 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: تنظیم ابزار اندروید و پذیرش لایسنس‌ها (Setup Android SDK & Accept Licenses)
+        uses: android-actions/setup-android@v3
+
+      - name: اطمینان از پذیرش مجوزهای Android SDK
+        run: |
+          yes | sdkmanager --licenses || true
+          sdkmanager "platforms;android-36" "build-tools;36.0.0" || true
+
       - name: تنظیم ابزار گرادل (Setup Gradle)
         uses: gradle/actions/setup-gradle@v4
 
       - name: دسترسی اجرایی به gradlew (Make gradlew executable)
         run: chmod +x ./gradlew
 
-      - name: ایجاد فایل keystore پیش‌فرض دیباگ
+      - name: آماده‌سازی فایل .env
+        run: |
+          if [ ! -f ".env" ]; then
+            if [ -f ".env.example" ]; then
+              cp .env.example .env
+            else
+              touch .env
+            fi
+          fi
+
+      - name: ایجاد فایل keystore دیباگ
         run: |
           if [ -f "debug.keystore.base64" ]; then
-            base64 -d debug.keystore.base64 > debug.keystore
+            base64 -d debug.keystore.base64 > debug.keystore 2>/dev/null || base64 --decode debug.keystore.base64 > debug.keystore 2>/dev/null || true
+          fi
+          if [ ! -f "debug.keystore" ] || [ ! -s "debug.keystore" ]; then
+            keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
           fi
 
       - name: ساخت فایل APK (Assemble Debug APK)
-        run: ./gradlew assembleDebug
+        run: ./gradlew assembleDebug --stacktrace
 
       - name: آماده‌سازی و تغییر نام فایل APK
         run: |
           mkdir -p release-artifacts
-          TAG="${{ github.ref_name }}"
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            TAG="${{ github.event.inputs.tag_name }}"
+          TAG="${{ github.event.inputs.tag_name }}"
+          if [ -z "$TAG" ]; then
+            TAG="${{ github.ref_name }}"
+          fi
+          if [ -z "$TAG" ] || [ "$TAG" = "main" ] || [ "$TAG" = "master" ]; then
+            TAG="v1.0.0"
           fi
           cp app/build/outputs/apk/debug/app-debug.apk "release-artifacts/SimpleCalculator-${TAG}.apk"
+          echo "RELEASE_TAG=$TAG" >> $GITHUB_ENV
 
       - name: انتشار در بخش Releases گیت‌هاب (Create GitHub Release)
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ github.event.inputs.tag_name || github.ref_name }}
-          name: "نسخه ${{ github.event.inputs.tag_name || github.ref_name }}"
+          tag_name: ${{ env.RELEASE_TAG }}
+          name: "نسخه ${{ env.RELEASE_TAG }}"
           body: |
             ## 📱 انتشار نسخه جدید اپلیکیشن ماشین حساب ساده
             
